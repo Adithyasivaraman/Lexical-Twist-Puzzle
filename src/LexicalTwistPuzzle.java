@@ -3,9 +3,7 @@ import java.util.Scanner;
 /**
  * Lexical Twist Puzzle Application
  *
- * UC2: Accept Word Inputs
- *
- * Reads two words from user.
+ * UC3: Validate Single Word Constraint
  */
 public class LexicalTwistPuzzle {
 
@@ -21,6 +19,17 @@ public class LexicalTwistPuzzle {
         System.out.println("Enter second word:");
         String secondWord = scanner.nextLine();
 
-        // Inputs stored for future processing
+        // Validation
+        if (firstWord.contains(" ")) {
+            System.out.println(firstWord + " is an invalid word");
+            return;
+        }
+
+        if (secondWord.contains(" ")) {
+            System.out.println(secondWord + " is an invalid word");
+            return;
+        }
+
+        // Further logic later
     }
 }
