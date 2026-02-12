@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Lexical Twist Puzzle Application
  *
- * UC5: Transform word if reverse match exists
+ * UC6: Combine words and count vowels & consonants
  */
 public class LexicalTwistPuzzle {
 
@@ -44,8 +44,27 @@ public class LexicalTwistPuzzle {
                             .replaceAll("[aeiou]", "@");
 
             System.out.println(transformed);
-        }
 
-        // Next UC handles non-reverse case
+        } else {
+
+            String combined =
+                    (firstWord + secondWord).toUpperCase();
+
+            int vowelCount = 0;
+            int consonantCount = 0;
+
+            for (char ch : combined.toCharArray()) {
+
+                if (ch >= 'A' && ch <= 'Z') {
+                    if ("AEIOU".indexOf(ch) != -1) {
+                        vowelCount++;
+                    } else {
+                        consonantCount++;
+                    }
+                }
+            }
+
+            // Counts used in next UC
+        }
     }
 }
