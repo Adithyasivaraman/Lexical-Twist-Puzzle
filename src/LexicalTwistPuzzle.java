@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Lexical Twist Puzzle Application
  *
- * UC4: Check Reverse Relationship
+ * UC5: Transform word if reverse match exists
  */
 public class LexicalTwistPuzzle {
 
@@ -29,16 +29,23 @@ public class LexicalTwistPuzzle {
             return;
         }
 
-        // Reverse first word
         String reversed =
                 new StringBuilder(firstWord)
                         .reverse()
                         .toString();
 
-        // Case-insensitive comparison
         boolean isReverseMatch =
                 reversed.equalsIgnoreCase(secondWord);
 
-        // Logic continues in next UC
+        if (isReverseMatch) {
+
+            String transformed =
+                    reversed.toLowerCase()
+                            .replaceAll("[aeiou]", "@");
+
+            System.out.println(transformed);
+        }
+
+        // Next UC handles non-reverse case
     }
 }
