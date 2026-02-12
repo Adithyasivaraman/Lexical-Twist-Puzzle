@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Lexical Twist Puzzle Application
  *
- * UC3: Validate Single Word Constraint
+ * UC4: Check Reverse Relationship
  */
 public class LexicalTwistPuzzle {
 
@@ -19,7 +19,6 @@ public class LexicalTwistPuzzle {
         System.out.println("Enter second word:");
         String secondWord = scanner.nextLine();
 
-        // Validation
         if (firstWord.contains(" ")) {
             System.out.println(firstWord + " is an invalid word");
             return;
@@ -30,6 +29,16 @@ public class LexicalTwistPuzzle {
             return;
         }
 
-        // Further logic later
+        // Reverse first word
+        String reversed =
+                new StringBuilder(firstWord)
+                        .reverse()
+                        .toString();
+
+        // Case-insensitive comparison
+        boolean isReverseMatch =
+                reversed.equalsIgnoreCase(secondWord);
+
+        // Logic continues in next UC
     }
 }
